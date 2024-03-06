@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TRANSLIT BLYAT</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 2px solid white;
+        }
+
+        button {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkred;
+        }
+
+        #author {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TRANSLIT BLYAT</h1>
+    <input type="text" id="inputText" placeholder="Введите текст">
+    <br>
+    <button onclick="transliterate()">TRANSLIT</button>
+    <br>
+    <div id="outputText"></div>
+    <div id="author">
+        Автор: S.Winsent | <a href="https://t.me/WinsentSweet">Telegram</a>
+    </div>
+
+    <script>
+        function transliterate() {
+            const inputText = document.getElementById("inputText").value.toUpperCase();
+            const outputText = transliterateText(inputText);
+            document.getElementById("outputText").innerText = outputText;
+        }
+
+        function transliterateText(inputText) {
+            return inputText
+                .replaceAll("А", "A")
+                .replaceAll("Б", "B")
+                .replaceAll("В", "B")
+                .replaceAll("Г", "G")
+                .replaceAll("Д", "D")
+                .replaceAll("Е", "E")
+                .replaceAll("Ё", "E")
+                .replaceAll("Ж", "J")
+                .replaceAll("З", "Z")
+                .replaceAll("И", "U")
+                .replaceAll("Й", "U")
+                .replaceAll("К", "K")
+                .replaceAll("Л", "L")
+                .replaceAll("М", "M")
+                .replaceAll("Н", "H")
+                .replaceAll("О", "O")
+                .replaceAll("П", "P")
+                .replaceAll("Р", "P")
+                .replaceAll("С", "C")
+                .replaceAll("Т", "T")
+                .replaceAll("У", "Y")
+                .replaceAll("Ф", "F")
+                .replaceAll("Х", "X")
+                .replaceAll("Ц", "C")
+                .replaceAll("Ч", "4")
+                .replaceAll("Ш", "UU")
+                .replaceAll("Щ", "UU")
+                .replaceAll("Ъ", "B")
+                .replaceAll("Ы", "BI")
+                .replaceAll("Ь", "B")
+                .replaceAll("Э", "3")
+                .replaceAll("Ю", "IO")
+                .replaceAll("Я", "YA");
+        }
+    </script>
+</body>
+</html>
